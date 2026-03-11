@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting</title>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            document.getElementById("message").textContent = "Redirecting to demo (/style)...";
-
-            setTimeout(function () {
-                window.location.href = "/style/";
-            }, 2000);
-        });
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UV Proxy</title>
+<link rel="stylesheet" href="../style/style/global.css">
+<link rel="stylesheet" href="../style/style/browser.css">
 </head>
 <body>
-    <h1 id="message">Redirecting...</h1>
+<h1>UV Proxy</h1>
+<input id="url-input" placeholder="Enter full URL (https://...)">
+<button id="go-btn">Go</button>
+
+<script src="../style/scripts/check.js"></script>
+<script src="../style/scripts/lstimer.js"></script>
+<script src="../tabs.js"></script>
+<script src="../uv/uv.client.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('../uv/uv.sw.js');
+}
+
+const input = document.getElementById('url-input');
+const button = document.getElementById('go-btn');
+button.addEventListener('click', () => {
+  const url = input.value.trim();
+  if (!url) return;
+  window.location.href = '/service/' + Ultraviolet.codec.xor.encode(url);
+});
+</script>
 </body>
 </html>
