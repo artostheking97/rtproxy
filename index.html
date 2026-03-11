@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting</title>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            document.getElementById("message").textContent = "One second to load RT'S Proxy...";
+    <title>RT Proxy</title>
 
-            setTimeout(function () {
-                window.location.href = "/active/index.html";
-            }, 2000);
-        });
-    </script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/style/global.css">
+    <link rel="stylesheet" href="/style/browser.css">
+
+    <!-- UV Service Worker -->
+    <script src="/uv/uv.sw.js"></script>
 </head>
 <body>
-    <h1 id="message">Redirecting...</h1>
+    <h1>RT Proxy</h1>
+    
+    <!-- UI Scripts -->
+    <script src="/tabs.js"></script>
+    <script type="module" src="/scripts/prxy.mjs"></script>
+    <script type="module" src="/scripts/tabs.mjs"></script>
+    <script type="module" src="/scripts/utils.mjs"></script>
 </body>
 </html>
