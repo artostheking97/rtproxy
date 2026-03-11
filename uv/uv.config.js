@@ -1,6 +1,6 @@
 /*global Ultraviolet*/
 self.__uv$config = {
-    prefix: "uv/service/",
+    prefix: "/uv/service/",
     bare: [
         "https://bare.titaniumnetwork.org/bare/",
         "https://uv.holyubofficial.net/bare/",
