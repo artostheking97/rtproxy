@@ -1,12 +1,7 @@
 /*global Ultraviolet*/
 self.__uv$config = {
     prefix: '/service/',
-    bare: [
-        'https://uv.holyubofficial.net/bare/',
-        'https://bare.titaniumnetwork.org/bare/',
-        'https://bare.px10.workers.dev/bare/',
-        'https://bare.chromehack.com/bare/'
-    ],
+    bare: 'https://bare.px10.workers.dev/bare/',
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
     handler: '/uv/uv.handler.js',
